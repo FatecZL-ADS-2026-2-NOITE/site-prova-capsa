@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de servicos</title>
+</head>
+<body>
+
+    <h1>Cadastrar servico</h1>
+    
+    <!-- Formulário -->
+    <form id="formservico">
+        <div>
+            <label for="nome">nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+        <br>
+        <div>
+            <label for="desc">desc:</label>
+            <input type="text" id="desc" required>
+        </div>
+        <br>
+        <div>
+            <label for="preco">preco:</label>
+            <input type="number" id="preco" required>
+        </div>
+        <br>
+        <button type="submit">Salvar servico</button>
+    </form>
+
+    <h2>Lista de servicos</h2>  
+    <ul id="listaservicos"></ul>
+
+<table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaservicos">
+            <!-- As linhas serão inseridas via JS -->
+        </tbody>
+    </table>    
+    <!-- Script JavaScript -->
+
+    <h1>Cadastrar Evento</h1>
+    
+    <!-- Formulário de Evento -->
+ <form id="formevento">
+        <div>
+            <label for="nomee">Nome do Evento:</label>
+            <input type="text" id="nomee" required>
+        </div>
+        <br>
+        <div>
+            <label for="desce">Descrição:</label>
+            <input type="text" id="desce" required>
+        </div>
+        <br>
+
+        <!-- Campo Sim/Não (Inicia em 'Não' como padrão) -->
+        <div>
+            <label for="temServico">Possui serviço atrelado?</label>
+            <select id="temServico">
+                <option value="Não" selected>Não</option>
+                <option value="Sim">Sim</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Campo para digitar o nome do serviço (inicia escondido via style) -->
+        <div id="boxNomeServico" style="display: none;">
+            <label for="nomeServicoAtrelado">Nome do Serviço:</label>
+            <input type="text" id="nomeServicoAtrelado">
+        </div>
+        <br>
+
+        <button type="submit">Salvar Evento</button>
+    </form>
+
+    <h2>Tabela de Eventos</h2> 
+
+    <!-- Tabela de Eventos -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome do Evento</th>
+                <th>Descrição</th>
+                <th>Serviço Atrelado</th>
+            </tr>
+        </thead>
+        <tbody id="tabelasevento">
+            <!-- As linhas serão inseridas via JS -->
+        </tbody>
+    </table>   
+
+    <!-- Script JavaScript -->
+    <script src="eventos.js" defer></script>
+    <script src="servico.js" defer></script>
+</body>
+</html>
