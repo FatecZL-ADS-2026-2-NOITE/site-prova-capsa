@@ -1,106 +1,365 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de servicos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciamento | Barbearia ALS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="gerenciamento.css">
+
+    <script src="servico.js" defer></script>
+    <script src="eventos.js" defer></script>
 </head>
+
 <body>
 
-    <h1>Cadastrar servico</h1>
-    
-    <!-- Formulário -->
-    <form id="formservico">
-        <div>
-            <label for="nome">nome:</label>
-            <input type="text" id="nome" required>
+    <!-- CABEÇALHO -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✂</span>
+                <span>Barbearia <strong>ALS</strong></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Ver Home</a>
+                <a href="#servicos" class="active">Serviços</a>
+                <a href="#eventos">Eventos</a>
+            </nav>
+
+            <a href="index.html" class="nav-button">
+                ← VOLTAR AO SITE
+            </a>
+
         </div>
-        <br>
-        <div>
-            <label for="desc">desc:</label>
-            <input type="text" id="desc" required>
+    </header>
+
+
+    <main>
+
+        <!-- BANNER DO PAINEL -->
+        <section class="page-banner">
+            <div class="container banner-content">
+
+                <span class="section-subtitle">
+                    ÁREA DE GERENCIAMENTO
+                </span>
+
+                <h1>
+                    PAINEL <span>ADMINISTRATIVO</span>
+                </h1>
+
+                <p>
+                    Gerencie os serviços e eventos da Barbearia ALS
+                    em um só lugar.
+                </p>
+
+                <div class="banner-label">
+                    <span class="status-dot"></span>
+                    Painel de cadastro
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="management-section">
+            <div class="container">
+
+                <!-- CABEÇALHO DOS SERVIÇOS -->
+                <div class="section-title" id="servicos">
+
+                    <div class="title-icon">✂</div>
+
+                    <div>
+                        <span class="section-subtitle">CATÁLOGO DA BARBEARIA</span>
+                        <h2>GERENCIAR <span>SERVIÇOS</span></h2>
+                        <p>
+                            Cadastre os serviços e seus respectivos preços.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- FORMULÁRIO DE SERVIÇOS -->
+                <div class="management-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>CADASTRAR NOVO SERVIÇO</h3>
+                            <p>Preencha os campos abaixo para adicionar um serviço.</p>
+                        </div>
+
+                        <span class="card-number">01</span>
+                    </div>
+
+                    <form id="formservico">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="nome">Nome do serviço</label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    placeholder="Ex.: Corte masculino"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preco">Preço (R$)</label>
+
+                                <input
+                                    type="number"
+                                    id="preco"
+                                    name="preco"
+                                    placeholder="Ex.: 35.00"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="desc">Descrição do serviço</label>
+
+                                <textarea
+                                    id="desc"
+                                    name="descricao"
+                                    rows="3"
+                                    placeholder="Descreva o serviço oferecido..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="button button-primary">
+                            <span class="button-symbol">+</span>
+                            CADASTRAR SERVIÇO
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- TABELA DE SERVIÇOS -->
+                <div class="management-card table-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>SERVIÇOS CADASTRADOS</h3>
+                            <p>Confira os serviços registrados no navegador.</p>
+                        </div>
+
+                        <span class="table-icon">▤</span>
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Preço</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelaservicos">
+                                <!-- Preenchido pelo servico.js -->
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <p class="table-note">
+                        Os registros são carregados a partir do armazenamento local do navegador.
+                    </p>
+
+                </div>
+
+
+                <!-- DIVISOR -->
+                <div class="section-divider"></div>
+
+
+                <!-- CABEÇALHO DOS EVENTOS -->
+                <div class="section-title" id="eventos">
+
+                    <div class="title-icon">★</div>
+
+                    <div>
+                        <span class="section-subtitle">DATAS ESPECIAIS</span>
+                        <h2>GERENCIAR <span>EVENTOS</span></h2>
+                        <p>
+                            Cadastre promoções, campanhas e eventos da barbearia.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- FORMULÁRIO DE EVENTOS -->
+                <div class="management-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>CADASTRAR NOVO EVENTO</h3>
+                            <p>Informe os detalhes do evento que deseja registrar.</p>
+                        </div>
+
+                        <span class="card-number">02</span>
+                    </div>
+
+                    <form id="formevento">
+
+                        <div class="form-grid">
+
+                            <div class="form-group full-width">
+                                <label for="nomee">Nome do evento</label>
+
+                                <input
+                                    type="text"
+                                    id="nomee"
+                                    name="nome"
+                                    placeholder="Ex.: Dia do Cliente"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="desce">Descrição do evento</label>
+
+                                <textarea
+                                    id="desce"
+                                    name="descricao"
+                                    rows="3"
+                                    placeholder="Descreva a promoção ou o evento..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="temServico">
+                                    O evento está associado a algum serviço?
+                                </label>
+
+                                <select id="temServico" name="temServico" required>
+                                    <option value="Não">Não</option>
+                                    <option value="Sim">Sim</option>
+                                </select>
+                            </div>
+
+                            <div
+                                class="form-group full-width"
+                                id="boxNomeServico"
+                                style="display: none;"
+                            >
+                                <label for="nomeServicoAtrelado">
+                                    Nome do serviço associado
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nomeServicoAtrelado"
+                                    name="nomeServico"
+                                    placeholder="Ex.: Corte masculino"
+                                >
+
+                                <small>
+                                    Informe o nome do serviço relacionado ao evento.
+                                </small>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="button button-primary">
+                            <span class="button-symbol">+</span>
+                            CADASTRAR EVENTO
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- TABELA DE EVENTOS -->
+                <div class="management-card table-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h3>EVENTOS CADASTRADOS</h3>
+                            <p>Visualize os eventos registrados.</p>
+                        </div>
+
+                        <span class="table-icon">▤</span>
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Evento</th>
+                                    <th>Descrição</th>
+                                    <th>Serviço associado</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tabelasevento">
+                                <!-- Preenchido pelo eventos.js -->
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <p class="table-note">
+                        Os eventos são armazenados localmente neste navegador.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container footer-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✂</span>
+                <span>Barbearia <strong>ALS</strong></span>
+            </a>
+
+            <p>Painel de gerenciamento de serviços e eventos.</p>
+
+            <a href="index.html" class="footer-link">
+                Voltar para a página principal ↑
+            </a>
+
         </div>
-        <br>
-        <div>
-            <label for="preco">preco:</label>
-            <input type="number" id="preco" required>
-        </div>
-        <br>
-        <button type="submit">Salvar servico</button>
-    </form>
+    </footer>
 
-    <h2>Lista de servicos</h2>  
-    <ul id="listaservicos"></ul>
-
-<table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaservicos">
-            <!-- As linhas serão inseridas via JS -->
-        </tbody>
-    </table>    
-    <!-- Script JavaScript -->
-
-    <h1>Cadastrar Evento</h1>
-    
-    <!-- Formulário de Evento -->
- <form id="formevento">
-        <div>
-            <label for="nomee">Nome do Evento:</label>
-            <input type="text" id="nomee" required>
-        </div>
-        <br>
-        <div>
-            <label for="desce">Descrição:</label>
-            <input type="text" id="desce" required>
-        </div>
-        <br>
-
-        <!-- Campo Sim/Não (Inicia em 'Não' como padrão) -->
-        <div>
-            <label for="temServico">Possui serviço atrelado?</label>
-            <select id="temServico">
-                <option value="Não" selected>Não</option>
-                <option value="Sim">Sim</option>
-            </select>
-        </div>
-        <br>
-
-        <!-- Campo para digitar o nome do serviço (inicia escondido via style) -->
-        <div id="boxNomeServico" style="display: none;">
-            <label for="nomeServicoAtrelado">Nome do Serviço:</label>
-            <input type="text" id="nomeServicoAtrelado">
-        </div>
-        <br>
-
-        <button type="submit">Salvar Evento</button>
-    </form>
-
-    <h2>Tabela de Eventos</h2> 
-
-    <!-- Tabela de Eventos -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome do Evento</th>
-                <th>Descrição</th>
-                <th>Serviço Atrelado</th>
-            </tr>
-        </thead>
-        <tbody id="tabelasevento">
-            <!-- As linhas serão inseridas via JS -->
-        </tbody>
-    </table>   
-
-
-    <h1><a href="index.html">Voltar para a pagina inicial</a></h1>
-
-    <!-- Script JavaScript -->
-    <script src="eventos.js" defer></script>
-    <script src="servico.js" defer></script>
 </body>
 </html>

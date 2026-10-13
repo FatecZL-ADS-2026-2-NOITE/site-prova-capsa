@@ -1,0 +1,739 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --background: #171717;
+    --background-dark: #101010;
+    --card: #242424;
+    --card-light: #2b2b2b;
+
+    --accent: #f0442e;
+    --accent-hover: #d83220;
+
+    --text: #f5f5f5;
+    --text-muted: #b7b7b7;
+    --border: #393939;
+
+    --font-title: "Barlow Condensed", sans-serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(1050px, 90%);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-title);
+    line-height: 1.15;
+}
+
+h1 span,
+h2 span {
+    color: var(--accent);
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   2. NAVBAR
+======================================== */
+
+.navbar {
+    height: 72px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: #111111;
+    border-bottom: 1px solid #292929;
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: var(--accent);
+}
+
+.logo-icon {
+    color: var(--accent);
+    font-size: 27px;
+    line-height: 1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #c4c4c4;
+    font-size: 11px;
+    transition: color 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-button {
+    padding: 9px 13px;
+
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition: 0.25s;
+}
+
+.nav-button:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+
+/* ========================================
+   3. BANNER DO PAINEL
+======================================== */
+
+.page-banner {
+    position: relative;
+    overflow: hidden;
+
+    padding: 65px 0 60px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.97),
+            rgba(15, 15, 15, 0.86)
+        ),
+        url(
+            "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=80"
+        );
+
+    background-position: center;
+    background-size: cover;
+
+    border-bottom: 1px solid #292929;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-content h1 {
+    margin: 9px 0 12px;
+
+    font-size: clamp(39px, 6vw, 62px);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.banner-content > p {
+    max-width: 560px;
+    color: #c0c0c0;
+    font-size: 12px;
+}
+
+.banner-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 22px;
+    padding: 7px 12px;
+
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #3b3b3b;
+    border-radius: 2px;
+
+    color: #d0d0d0;
+    font-size: 10px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+
+/* ========================================
+   4. ÁREA DE GERENCIAMENTO
+======================================== */
+
+.management-section {
+    padding: 60px 0 80px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    margin-bottom: 25px;
+}
+
+.title-icon {
+    display: grid;
+    place-items: center;
+
+    width: 57px;
+    height: 57px;
+    flex-shrink: 0;
+
+    background-color: var(--card);
+    border: 1px solid #414141;
+    border-radius: 3px;
+
+    color: var(--accent);
+    font-size: 30px;
+}
+
+.section-title h2 {
+    margin: 3px 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   5. CARDS E FORMULÁRIOS
+======================================== */
+
+.management-card {
+    margin-bottom: 25px;
+    padding: 28px;
+
+    background-color: var(--card);
+    border: 1px solid #303030;
+    border-radius: 3px;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.card-heading h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-heading p {
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.card-number {
+    color: #444444;
+    font-family: var(--font-title);
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #eeeeee;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 14px;
+
+    background-color: #191919;
+    border: 1px solid #414141;
+    border-radius: 2px;
+
+    color: var(--text);
+    font-size: 12px;
+
+    outline: none;
+    transition: border-color 0.25s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #818181;
+}
+
+.form-group textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background-color: #191919;
+    color: white;
+}
+
+.form-group small {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 43px;
+    margin-top: 24px;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 2px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.button-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.button-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.button-symbol {
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* ========================================
+   6. TABELAS
+======================================== */
+
+.table-card {
+    padding-bottom: 22px;
+}
+
+.table-icon {
+    color: var(--accent);
+    font-size: 27px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #191919;
+}
+
+th {
+    padding: 14px 16px;
+
+    color: var(--accent);
+    font-family: var(--font-title);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px 16px;
+
+    color: #d2d2d2;
+    font-size: 11px;
+    vertical-align: top;
+
+    border-bottom: 1px solid #393939;
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #303030;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-note {
+    margin-top: 16px;
+    color: #8d8d8d;
+    font-size: 10px;
+}
+
+
+/* ========================================
+   7. DIVISOR DAS SEÇÕES
+======================================== */
+
+.section-divider {
+    height: 1px;
+    margin: 55px 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #454545,
+        transparent
+    );
+}
+
+
+/* ========================================
+   8. RODAPÉ
+======================================== */
+
+.footer {
+    background-color: #0b0b0b;
+    border-top: 1px solid #292929;
+    padding: 27px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-content > p {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.footer-link {
+    color: var(--accent);
+    font-size: 10px;
+    transition: color 0.25s;
+}
+
+.footer-link:hover {
+    color: #ff8a78;
+}
+
+
+/* ========================================
+   9. RESPONSIVIDADE - TABLETS
+======================================== */
+
+@media (max-width: 800px) {
+
+    .nav-container {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-button {
+        font-size: 9px;
+        padding: 8px;
+    }
+
+    .management-card {
+        padding: 22px;
+    }
+}
+
+
+/* ========================================
+   10. RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: 65px;
+    }
+
+    .nav-container {
+        min-height: 65px;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        font-size: 11px;
+    }
+
+    .logo-icon {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 7px 20px;
+
+        padding-top: 8px;
+        border-top: 1px solid #292929;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-button {
+        margin-left: auto;
+        font-size: 8px;
+    }
+
+    .page-banner {
+        padding: 48px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 42px;
+    }
+
+    .management-section {
+        padding: 42px 0 55px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .title-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+
+    .section-title p {
+        font-size: 10px;
+    }
+
+    .management-card {
+        padding: 18px 15px;
+    }
+
+    .card-heading {
+        margin-bottom: 20px;
+    }
+
+    .card-heading h3 {
+        font-size: 21px;
+    }
+
+    .card-heading p {
+        font-size: 10px;
+    }
+
+    .card-number {
+        font-size: 35px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 10px;
+        min-width: 100px;
+    }
+
+    .section-divider {
+        margin: 38px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+
+/* ========================================
+   11. CELULARES ESTREITOS
+======================================== */
+
+@media (max-width: 360px) {
+
+    .nav-button {
+        white-space: normal;
+        text-align: center;
+        max-width: 115px;
+    }
+
+    .banner-content h1 {
+        font-size: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .management-card {
+        padding: 15px 11px;
+    }
+}

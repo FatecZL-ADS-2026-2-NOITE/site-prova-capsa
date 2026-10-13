@@ -1,51 +1,601 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Barbearia ALS | Estilo e Tradição</title>
+
+    <meta
+        name="description"
+        content="Conheça a Barbearia ALS. Cortes masculinos, barba, estilo e atendimento especializado."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
- <h2>Tabela de Servicos</h2> 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaservicos">
-            <!-- As linhas serão inseridas via JS -->
-        </tbody>
-    </table>    
-    <!-- Script JavaScript -->
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
 
- <h2>Tabela de Eventos</h2> 
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">✂</span>
+                <span>Barbearia <strong>ALS</strong></span>
+            </a>
 
-    <!-- Tabela de Eventos -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome do Evento</th>
-                <th>Descrição</th>
-                <th>Serviço Atrelado</th>
-            </tr>
-        </thead>
-        <tbody id="tabelasevento">
-            <!-- As linhas serão inseridas via JS -->
-        </tbody>
-    </table>   
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio" class="active">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre nós</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <a
+                href="#agendamento"
+                class="nav-button"
+            >
+                Agendar horário
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+        </div>
+    </header>
 
 
+    <main>
 
-        <script src="eventos.js" defer></script>
+        <!-- BANNER PRINCIPAL -->
+        <section class="hero" id="inicio">
 
-    <script src="servico.js" defer></script>
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <span class="hero-subtitle">
+                    SEU ESTILO COMEÇA AQUI
+                </span>
+
+                <h1>
+                    BARBEARIA <span>ALS</span>
+                </h1>
+
+                <p>
+                    Muito mais que um corte, uma experiência.
+                    Realçamos seu estilo com qualidade, personalidade
+                    e atenção a cada detalhe.
+                </p>
+
+                <a href="#servicos" class="button button-primary">
+                    CONHEÇA NOSSOS SERVIÇOS
+                    <span>→</span>
+                </a>
+
+            </div>
+        </section>
 
 
+        <!-- SERVIÇOS -->
+        <section class="section services-section" id="servicos">
 
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-subtitle">O QUE OFERECEMOS</span>
+                    <h2>NOSSOS <span>SERVIÇOS</span></h2>
+                    <p>
+                        Cuidado, precisão e estilo para você.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- CARD 1 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">✂</div>
+
+                        <div class="service-info">
+                            <h3>CORTE SOCIAL</h3>
+
+                            <p>
+                                Um corte clássico e elegante,
+                                ideal para qualquer ocasião.
+                            </p>
+
+                            <span class="service-price">
+                                A partir de R$ 35,00
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 2 -->
+                    <article class="service-card">
+
+                        
+<div className="flex items-center justify-center text-[#ff453a]">
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#ff453a"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 20L17 7" />
+    <path d="M14 4L20 10" />
+    <path d="M12 6L18 12" />
+    <path d="M3 21L6 18" />
+  </svg>
+</div>
+
+
+                        <div class="service-info">
+                            <h3>BARBA MODELADA</h3>
+
+                            <p>
+                                Acabamento preciso e modelagem
+                                para valorizar seu rosto.
+                            </p>
+
+                            <span class="service-price">
+                                A partir de R$ 20,00
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 3 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">♛</div>
+
+                        <div class="service-info">
+                            <h3>BARBA COMPLETA</h3>
+
+                            <p>
+                                Cuidados especiais, alinhamento
+                                e acabamento profissional.
+                            </p>
+
+                            <span class="service-price">
+                                A partir de R$ 25,00
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARD 4 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">♙</div>
+
+                        <div class="service-info">
+                            <h3>PROGRESSIVA + CORTE</h3>
+
+                            <p>
+                                Transforme seu visual com um
+                                resultado moderno e bem cuidado.
+                            </p>
+
+                            <span class="service-price">
+                                A partir de R$ 80,00
+                            </span>
+                        </div>
+                        
+
+                    </article>
+
+                </div>
+                <h3 class="additional-title">SERVIÇOS ADICIONAIS</h3>
+
+<div class="services-grid" id="servicesGrid">
+    <!-- O JavaScript adicionará os novos serviços aqui -->
+</div>
+
+
+                <div class="services-action">
+                    <a href="#agendamento" class="button button-primary">
+                        AGENDAR MEU HORÁRIO
+                        <span>→</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        
+<!-- EVENTOS -->
+<section class="section events-section" id="eventos">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-subtitle">FIQUE POR DENTRO</span>
+            <h2>NOSSOS <span>EVENTOS</span></h2>
+            <p>Confira as novidades e os eventos da Barbearia ALS.</p>
+        </div>
+
+        <div class="events-grid" id="eventosGrid">
+            <!-- O JavaScript adicionará os eventos aqui -->
+        </div>
+
+    </div>
+</section>
+
+        <!-- SOBRE NÓS + GALERIA -->
+        <section class="section about-section" id="sobre">
+
+            <div class="container about-grid">
+
+                <!-- SOBRE NÓS -->
+                <div class="about-content">
+
+                    <span class="section-subtitle">NOSSA HISTÓRIA</span>
+
+                    <h2>SOBRE <span>NÓS</span></h2>
+
+                    <p>
+                        A Barbearia ALS nasceu da paixão pela arte
+                        da barbearia e pelo cuidado com o visual
+                        masculino.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é oferecer um atendimento
+                        de qualidade, em um ambiente confortável,
+                        onde cada cliente possa se sentir à vontade.
+                    </p>
+
+                    <p>
+                        Trabalhamos com dedicação, atenção aos
+                        detalhes e respeito ao estilo de cada pessoa.
+                        Aqui, tradição e modernidade caminham juntas
+                        para proporcionar uma experiência especial.
+                    </p>
+
+                    <p>
+                        Venha conhecer nosso espaço e descubra como
+                        pequenos detalhes podem fazer toda a diferença.
+                    </p>
+
+
+                    <!-- INFORMAÇÕES DE LOCALIZAÇÃO -->
+                    <div class="location-cards">
+
+                        <article class="location-card">
+
+                            <span class="location-icon">⌖</span>
+
+                            <div>
+                                <h3>NOSSA LOCALIZAÇÃO</h3>
+                                <p>Adicione aqui o endereço</p>
+                            </div>
+
+                        </article>
+
+                        <article class="location-card">
+
+                            <span class="location-icon">◷</span>
+
+                            <div>
+                                <h3>FUNCIONAMENTO</h3>
+                                <p>Consulte nossos horários</p>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GALERIA -->
+                <div class="gallery-section" id="galeria">
+
+                    <div class="gallery-heading">
+                        <div>
+                            <span class="section-subtitle">
+                                NOSSO TRABALHO
+                            </span>
+
+                            <h2>GALERIA DE <span>FOTOS</span></h2>
+                        </div>
+                    </div>
+
+                    <div class="gallery-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85"
+                            alt="Barbeiro realizando um corte masculino"
+                        >
+                    </div>
+
+                    <div class="gallery-thumbnails">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80"
+                            alt="Interior de uma barbearia"
+                        >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&q=80"
+                            alt="Detalhes de um corte masculino"
+                        >
+
+                        <img
+                            src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=500&q=80"
+                            alt="Trabalho de barbearia"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTATO + AGENDAMENTO -->
+        <section class="section contact-section" id="contato">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-subtitle">FALE COM A GENTE</span>
+                    <h2>CONTATO E <span>AGENDAMENTOS</span></h2>
+                    <p>
+                        Ficou com alguma dúvida ou quer reservar
+                        seu horário? Entre em contato.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <!-- FORMULÁRIO -->
+                    <div class="contact-form-card">
+
+                        <h3>ENVIE UMA MENSAGEM</h3>
+
+                        <form id="formContato">
+
+                            <div class="form-group">
+                                <label for="nomeContato">Seu nome</label>
+
+                                <input
+                                    type="text"
+                                    id="nomeContato"
+                                    name="nome"
+                                    placeholder="Digite seu nome"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailContato">Seu e-mail</label>
+
+                                <input
+                                    type="email"
+                                    id="emailContato"
+                                    name="email"
+                                    placeholder="Digite seu e-mail"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagemContato">Mensagem</label>
+
+                                <textarea
+                                    id="mensagemContato"
+                                    name="mensagem"
+                                    rows="4"
+                                    placeholder="Como podemos ajudar?"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="button button-primary form-button"
+                            >
+                                ENVIAR PELO WHATSAPP
+                                <span>→</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- REDES SOCIAIS -->
+                    <div class="social-card">
+
+                        <h3>SOCIAL E AGENDAMENTOS</h3>
+
+                        <p>
+                            Acompanhe nossos trabalhos, confira
+                            novidades e fale diretamente com a equipe.
+                        </p>
+
+                        <a
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">◎</span>
+
+                            <span>
+                                <strong>INSTAGRAM</strong>
+                                <small>Acompanhe nossos cortes</small>
+                            </span>
+
+                            <span class="social-arrow">↗</span>
+                        </a>
+
+                        <a
+                            href="https://wa.me/55"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">◉</span>
+
+                            <span>
+                                <strong>WHATSAPP</strong>
+                                <small>Agende seu horário</small>
+                            </span>
+
+                            <span class="social-arrow">↗</span>
+                        </a>
+
+                        <div class="appointment-box" id="agendamento">
+
+                            <span class="appointment-label">
+                                SEU PRÓXIMO VISUAL COMEÇA AQUI
+                            </span>
+
+                            <h3>Pronto para renovar o visual?</h3>
+
+                            <p>
+                                Entre em contato e consulte os
+                                horários disponíveis.
+                            </p>
+
+                            <a
+                                href="https://wa.me/55"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button button-primary"
+                            >
+                                AGENDAR AGORA
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">✂</span>
+                <span>Barbearia <strong>ALS</strong></span>
+            </a>
+
+            <p>
+                Estilo, tradição e personalidade.
+            </p>
+
+            <span class="footer-copy">
+                © <span id="anoAtual">2026</span> Barbearia ALS.
+                Todos os direitos reservados.
+            </span>
+            
+<a href="barbeiro.html" class="footer-link">
+    Acesso administrativo
+</a>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- MENU MOBILE -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const menuAberto = navLinks.classList.toggle("show");
+
+            menuToggle.setAttribute("aria-expanded", menuAberto);
+            menuToggle.setAttribute(
+                "aria-label",
+                menuAberto ? "Fechar menu" : "Abrir menu"
+            );
+
+            menuToggle.textContent = menuAberto ? "✕" : "☰";
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("show");
+                menuToggle.classList.remove("active");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Abrir menu");
+            });
+        });
+
+        document.getElementById("anoAtual").textContent =
+            new Date().getFullYear();
+
+
+        // Abre o WhatsApp com os dados preenchidos no formulário.
+        document.getElementById("formContato").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+
+                const nome = document.getElementById("nomeContato").value.trim();
+                const email = document.getElementById("emailContato").value.trim();
+                const mensagem = document.getElementById("mensagemContato").value.trim();
+
+                const telefone = "5511999999999";
+
+                const texto =
+                    "Olá, Barbearia ALS!" +
+                    "\nNome: " + nome +
+                    "\nE-mail: " + email +
+                    "\nMensagem: " + mensagem;
+
+                const url =
+                    "https://wa.me/" + telefone +
+                    "?text=" + encodeURIComponent(texto);
+
+                window.open(url, "_blank");
+            }
+        );
+    </script>
+<script src="servicos-home.js"></script>
+<script src="eventos-home.js"></script>
 </body>
 </html>
